@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# vim-plug
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
+    echo "Installing vim-plug..."
+    mkdir -p ~/.vim/autoload/
+    curl -s -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
+# powerline fonts
+if [ ! -f ~/.powerline-fonts-installed ]; then
+    git clone https://github.com/powerline/fonts.git --depth=1 /tmp/powerline-fonts
+    cd /tmp/powerline-fonts
+    ./install.sh
+    touch ~/.powerline-fonts-installed
+fi

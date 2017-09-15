@@ -1,0 +1,7 @@
+set runtimepath+=~/.vim,~/.vim/after
+set packpath+=~/.vim
+source ~/.vimrc
+
+if exists('neovim_dot_app')
+    call MacSetFont("Droid Sans Mono for Powerline", 18)
+endif
