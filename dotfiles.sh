@@ -2,6 +2,8 @@
 
 # store path to dotfiles folder
 export DOT="${DOTFILES_BASE:-$HOME/.dotfiles}"
+export CLICOLOR=1
+export TERM=xterm-256color
 
 # create symlinks
 for lnsource in $(find $DOT -name '*.symlink' ); do

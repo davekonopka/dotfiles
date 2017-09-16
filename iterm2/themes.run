@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+source $DOT/utils/is_mac.sh
+
+if [ ! -d "$DOT/iterm2/themes/the-one-theme" ]; then
+    git clone https://github.com/benniemosher/the-one-theme/ $DOT/iterm2/themes/the-one-theme
+fi
