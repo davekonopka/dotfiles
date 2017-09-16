@@ -21,6 +21,11 @@ for script in $(find $DOT -name '*.source' ); do
     source $script
 done
 
+# execute scripts
+for script in $(find $DOT -name '*.run' ); do
+    $script
+done
+
 # source environment variables
 source $DOT/.env
 if [ -f ~/.env ]; then
