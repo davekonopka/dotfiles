@@ -33,3 +33,10 @@ if [ ! -d ~/.dotfiles ]; then
     git clone ${DOT_REPO:-git@github.com:davekonopka/dotfiles.git} ~/.dotfiles
 fi
 
+if [[ "$(uname)" == 'Darwin' ]]; then
+    if ! grep -i ".dotfiles" ~/.bash_profile > /dev/null ; then
+        echo "Add dotfiles sourcing to ~/.bash_profile"
+        echo ". ~/.dotfiles/dotfiles.sh" >> ~/.bash_profile
+    fi
+fi
+
