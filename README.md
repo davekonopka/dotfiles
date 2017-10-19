@@ -8,7 +8,7 @@
 
 ## Usage
 
-Source `dotfiles.sh` in your shell start script of your choice. This script scans for files with a few extensions in this repo and takes action on them when your shell loads.
+Source `dotfiles.sh` in the shell start script of your choice. This script scans for files with a few extensions in this repo and takes action on them when your shell loads.
 
 ### Symlinks
 
