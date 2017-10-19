@@ -17,3 +17,6 @@ cask "authy-desktop"
 cask "alfred"
 cask "iterm2"
 cask "atom-beta"
+cask "ynab"
+mas "Day One", id: 1055511498
+mas "Things3", id: 904280696
