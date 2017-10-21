@@ -1,22 +1,29 @@
-tap "caskroom/cask"
+tap "homebrew/core"
+tap "homebrew/bundle"
 tap "caskroom/versions"
-brew "mas"
+tap "caskroom/cask"
 brew "bash"
+brew "bash-git-prompt"
 brew "git"
 brew "jq"
+brew "mas"
+brew "neovim"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
 brew "watch"
 brew "wget"
-brew "neovim"
-cask "google-chrome"
-cask "dropbox"
 cask "1password"
-cask "authy-desktop"
 cask "alfred"
+cask "authy-desktop"
+cask "dropbox"
+cask "google-chrome"
 cask "iterm2"
-cask "atom-beta"
 cask "ynab"
+cask "caskroom/versions/atom-beta"
 mas "Day One", id: 1055511498
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Things3", id: 904280696
+mas "Tweetbot", id: 557168941
