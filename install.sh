@@ -3,11 +3,30 @@
 # Install Homebrew
 if [[ "$(uname)" == 'Darwin' ]]; then
     if ! which brew > /dev/null; then
+	echo "Installing homebrew..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        brew cask install dropbox
+
+	echo "Installing bash..."
+	brew install bash
+	sudo echo /usr/local/bin/bash >> /etc/shells
+	chsh -s /usr/local/bin/bash
+
+	echo "Installing some essential apps..."
+	brew cask install dropbox
         brew cask install google-chrome
         brew cask install 1password
         brew cask install authy
+	brew cask install iterm2
+    fi
+
+    # Create ssh config
+    if [ ! -f ~/.ssh/config ]; then
+        cat >~/.ssh/config <<EOL
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+EOL
     fi
 fi
 
@@ -17,6 +36,8 @@ if [ ! -f ~/.ssh/id_rsa ]; then
     echo -n "Enter your email address: "
     read email_address
     ssh-keygen -t rsa -b 4096 -C "$email_address"
+    eval "$(ssh-agent -s)"
+    ssh-add -K ~/.ssh/id_rsa
 fi
 
 if [[ ! "$(ssh -T git@github.com 2>&1)" =~ "You've successfully authenticated" ]]; then
