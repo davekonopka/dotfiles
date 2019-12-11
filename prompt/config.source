@@ -1,0 +1,32 @@
+PS1='$(gbt $?)'
+export TERM='xterm-256color'
+export VIRTUAL_ENV_DISABLE_PROMPT='1'
+export GBT_DEBUG='1'
+
+# List of cars
+export GBT_CARS='Status, CustomRO, Kubectl, Git, PyVirtEnv, Sign'
+
+# Prompt sign
+export GBT_CAR_SIGN_WRAP='1'
+export GBT_CAR_SIGN_USER_TEXT='🌊'
+
+# Dir
+export GBT_CAR_DIR_DEPTH='2'
+export GBT_CAR_DIR_FG='white'
+
+# Git
+export GBT_CAR_GIT_FORMAT=' {{ Icon }} {{ Head }} {{ Status }}{{ Ahead }}{{ Behind }} '
+export GBT_CAR_GIT_AHEAD_FG='yellow'
+export GBT_CAR_GIT_BG='250'
+
+# Kubectl
+export GBT_CAR_KUBECTL_FORMAT=' {{ Icon }} {{ Context }} {{ Namespace }} '
+export GBT_CAR_KUBECTL_NAMESPACE_FG='white'
+export GBT_CAR_GIT_AHEAD_FG='yellow'
+
+# Reactiveops
+export GBT_CAR_CUSTOMRO_FORMAT=' {{ Text }} '
+export GBT_CAR_CUSTOMRO_TEXT_CMD="echo ${PROJECT} ${INVENTORY}"
+export GBT_CAR_CUSTOMRO_BG='250'
+export GBT_CAR_CUSTOMRO_NAMESPACE_FG='white'
+export GBT_CAR_CUSTOMRO_DISPLAY_CMD="[[ ! -z ${PROJECT} ]] && echo YES"

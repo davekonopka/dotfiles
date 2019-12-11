@@ -1,0 +1,44 @@
+helm_init(){
+  # Create the tiller namespace
+  if [ -n "${TILLER_NAMESPACE}" ]; then
+    kubectl create ns "${TILLER_NAMESPACE}" \
+      --dry-run -o yaml --save-config | kubectl apply -f -
+  fi
+
+  # Then create the service account for tiller and init helm
+  kubectl -n "${TILLER_NAMESPACE:-kube-system}" create sa tiller \
+    --dry-run -o yaml --save-config | kubectl apply -f -
+
+  kubectl create clusterrolebinding tiller \
+    --clusterrole cluster-admin \
+    --serviceaccount="${TILLER_NAMESPACE:-kube-system}":tiller \
+    --serviceaccount=kube-system:tiller \
+    -o yaml --dry-run | kubectl -n "${TILLER_NAMESPACE:-kube-system}" apply -f -
+
+  helm init --upgrade --service-account tiller --tiller-tls-verify \
+      --override 'spec.template.spec.containers[0].resources.limits.cpu'="2" \
+      --override 'spec.template.spec.containers[0].resources.limits.memory'="1Gi" \
+      --override 'spec.template.spec.containers[0].resources.requests.cpu'="100m" \
+      --override 'spec.template.spec.containers[0].resources.requests.memory'="200Mi"
+
+  # Create a tiller user role for RBAC
+  kubectl -n ${TILLER_NAMESPACE:-kube-system} apply -f - << EOF
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+  name: tiller-user
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods/portforward
+  verbs:
+  - create
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - list
+EOF
+}
