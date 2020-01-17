@@ -11,15 +11,17 @@ Plug 'm-kat/aws-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'elzr/vim-json'
 Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
 " Theme
-silent! colorscheme one
+silent! colorscheme onedark
 set background=dark
 set guifont=Droid\ Sans\ Mono:h18
 " call MacSetFont("Droid Sans Mono", 18)
@@ -33,6 +35,8 @@ nnoremap <C-H> <C-W><C-H>
 " Set default panel location
 set splitbelow
 set splitright
+
+set number
 
 let g:ale_sign_column_always = 1
 let g:ale_set_loclist = 1

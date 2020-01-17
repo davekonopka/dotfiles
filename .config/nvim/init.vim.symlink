@@ -5,3 +5,8 @@ source ~/.vimrc
 if exists('neovim_dot_app')
     call MacSetFont("Droid Sans Mono for Powerline", 18)
 endif
+
+tnoremap <Esc> <C-\><C-n>
+
+set mouse=a "Enable mouse usage
+set shell=/usr/local/bin/bash\ --login
