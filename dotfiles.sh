@@ -4,9 +4,9 @@
 export DOT="${DOTFILES_BASE:-$HOME/.dotfiles}"
 export CLICOLOR=1
 export TERM=xterm-256color
-export DOTFILES_DEBUG="OK"
+# export DOTFILES_DEBUG="OK"
 
-# Following excludes anything stored under optional/*
+# This script excludes anything stored under optional/*
 # to allow for envrionment specific files to be run manually
 # with $DOTFILES_BASE set
 
