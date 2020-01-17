@@ -1,0 +1,6 @@
+export GBT_CARS='Status, CustomDO, Kubectl, Dir, Git, PyVirtEnv, Sign'
+
+# DigitalOcean
+export GBT_CAR_CUSTOMDO_TEXT_TEXT='🐙'
+export GBT_CAR_CUSTOMDO_BG='black'
+export GBT_CAR_CUSTOMDO_DISPLAY_CMD='[[ ! -z ${CTHULHU_DIR} ]] && echo YES'
