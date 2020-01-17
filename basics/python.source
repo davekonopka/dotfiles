@@ -1,0 +1,7 @@
+# export PATH="$PATH:/Users/dave/Library/Python/3.7/bin/"
+
+# Silence pip deprecation warnings
+export PYTHONWARNINGS="ignore:DEPRECATION::pip._internal.cli.base_command"
+
+alias python='python3'
+alias pip='pip3'
