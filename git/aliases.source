@@ -12,3 +12,5 @@ alias gd='git diff'
 alias gst='git status'
 alias ggpull='git pull origin $(git_current_branch)'
 alias ggpush='git push origin $(git_current_branch)'
+alias gbstale="git branch --merged master | grep -v master | sed 's/[ ]*//'"
+alias grstale="git remote prune origin --dry-run"

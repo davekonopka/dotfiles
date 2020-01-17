@@ -1,0 +1,17 @@
+#bind Space:magic-space
+
+export HISTSIZE=10000
+export HISTTIMEFORMAT='%h %d %H:%M:%S '
+export HISTCONTROL=ignoreboth
+export PROMPT_COMMAND="${PROMPT_COMMAND} history -a;"
+export EDITOR="nvim"
+export PATH="$PATH:/Users/dave/Library/Python/3.7/bin/"
+
+# Silence pip deprecation warnings
+export PYTHONWARNINGS="ignore:DEPRECATION::pip._internal.cli.base_command"
+
+alias ll="ls -la"
+alias lt="ls -latr"
+alias hg='history | grep '
+alias python='python3'
+alias pip='pip3'

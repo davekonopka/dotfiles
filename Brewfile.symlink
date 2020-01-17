@@ -2,12 +2,23 @@ tap "homebrew/core"
 tap "homebrew/bundle"
 tap "caskroom/versions"
 tap "caskroom/cask"
+brew "python"
+brew "awscli"
 brew "bash"
 brew "bash-git-prompt"
+brew "docker"
+brew "docker-machine"
 brew "git"
 brew "jq"
+brew "kubernetes-cli"
+brew "kops"
+brew "kubernetes-helm"
 brew "mas"
 brew "neovim"
+brew "packer"
+brew "python@2"
+brew "rbenv"
+brew "terraform"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
@@ -16,20 +27,31 @@ brew "wget"
 cask "1password"
 cask "alfred"
 cask "amazon-music"
-cask "authy-desktop"
+cask "anylist"
+cask "authy"
+cask "chefdk"
+cask "discord"
 cask "dropbox"
 cask "encryptme"
 cask "google-chrome"
 cask "iterm2"
+cask "minikube"
+cask "rescuetime"
 cask "spotify"
+cask "vagrant"
+cask "virtualbox"
 cask "ynab"
 cask "caskroom/versions/atom-beta"
 mas "Amphetamine", id: 937984704
 mas "Day One", id: 1055511498
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Monosnap", id: 540348655
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
 mas "Things3", id: 904280696
 mas "Trello", id: 1278508951
 mas "Tweetbot", id: 557168941

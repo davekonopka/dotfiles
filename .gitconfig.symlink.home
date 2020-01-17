@@ -1,0 +1,23 @@
+[user]
+	name = Dave Konopka
+	email = dave.konopka@gmail.com
+
+[merge]
+  keepBackup = false
+  tool = p4merge
+
+[mergetool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$LOCAL" "$PWD/$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+
+[diff]
+  tool = p4merge
+
+[difftool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[gui]
+	recentrepo = /Users/dave/godev/src/do-sre-project/pkg-index
