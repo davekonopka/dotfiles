@@ -4,9 +4,24 @@
 export DOT="${DOTFILES_BASE:-$HOME/.dotfiles}"
 export CLICOLOR=1
 export TERM=xterm-256color
+export DOTFILES_DEBUG="OK"
+
+# Following excludes anything stored under optional/*
+# to allow for envrionment specific files to be run manually
+# with $DOTFILES_BASE set
+
+# source environment variables
+if [ -f $DOT/.env ]; then
+    source $DOT/.env
+    [ -n "$DOTFILES_DEBUG" ] && echo "sourced $DOT/.env"
+fi
+if [ -f ~/.env ]; then
+    source ~/.env
+    [ -n "$DOTFILES_DEBUG" ] && echo "sourced ~/.env"
+fi
 
 # create symlinks
-for lnsource in $(find $DOT -name '*.symlink' ); do
+for lnsource in $(find $DOT -name '*.symlink' -not -path "$DOT/optional/*" ); do
     lntarget="${lnsource%.symlink}"
     lntarget="$HOME/${lntarget#$DOT/}"
 
@@ -15,21 +30,18 @@ for lnsource in $(find $DOT -name '*.symlink' ); do
         lntarget_path="$(dirname $lntarget)"
         [ ! -a $lntarget_path ] && mkdir -p $lntarget_path
         ln -s $lnsource $lntarget
+        [ -n "$DOTFILES_DEBUG" ] && echo "symlinked $lntarget -> $lnsource"
     fi
 done
 
 # source scripts
-for script in $(find $DOT -name '*.source' ); do
+for script in $(find $DOT -name '*.source' -not -path "$DOT/optional/*" ); do
     source $script
+    [ -n "$DOTFILES_DEBUG" ] && echo "sourced $script"
 done
 
 # execute scripts
-for script in $(find $DOT -name '*.run' ); do
+for script in $(find $DOT -name '*.run' -not -path "$DOT/optional/*" ); do
     $script
+    [ -n "$DOTFILES_DEBUG" ] && echo "executed $script"
 done
-
-# source environment variables
-source $DOT/.env
-if [ -f ~/.env ]; then
-     source ~/.env
-fi

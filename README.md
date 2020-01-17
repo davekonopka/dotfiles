@@ -19,3 +19,16 @@ For config files add `.symlink` to the end of any file path in this repo. A syml
 Add `.source` to the end of any file in this repo to have it sourced into your shell.
 
 Add `.run` to the end of any file in this repo to have it executed when your shell loads.
+
+### Optional Directories
+
+Anything stored under the `optional/*` directory is ignored. This allows for environment specific files to be included by choice in different environments.
+
+To include an optional set of files, create a directory under `optional/` and add an extra sourcing of `dotfiles.sh` to your shell start script with `DOTFILES_BASE` set.
+
+#### Example Optionals Usage
+
+```
+. ~/.dotfiles/dotfiles.sh
+DOTFILES_BASE=~/.dotfiles/optional/cool . ~/.dotfiles/dotfiles.sh
+```
