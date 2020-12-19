@@ -45,3 +45,6 @@ for script in $(find $DOT -name '*.run' -not -path "$DOT/optional/*" ); do
     $script
     [ -n "$DOTFILES_DEBUG" ] && echo "executed $script"
 done
+
+# end on a high note
+return 0
