@@ -1,7 +1,7 @@
-# export PATH="$PATH:/Users/dave/Library/Python/3.7/bin/"
-
-eval "$(pyenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # Silence pip deprecation warnings
-export PYTHONWARNINGS="ignore:DEPRECATION::pip._internal.cli.base_command"
+#export PYTHONWARNINGS="ignore:DEPRECATION::pip._internal.cli.base_command"
 
