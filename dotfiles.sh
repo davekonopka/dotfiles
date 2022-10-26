@@ -10,6 +10,12 @@ export TERM=xterm-256color
 # to allow for envrionment specific files to be run manually
 # with $DOTFILES_BASE set
 
+function requireEnvVar () {
+    varname=$1
+    [[ -z "${!varname}" ]] && { echo "${varname} is empty"; return 1; }
+    return 0
+}
+
 # source environment variables
 if [ -f $DOT/.env ]; then
     source $DOT/.env
