@@ -1,1 +1,1 @@
-which direnv && eval "$(direnv hook bash)"
+which direnv > /dev/null && eval "$(direnv hook bash)"

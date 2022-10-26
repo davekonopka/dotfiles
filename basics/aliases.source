@@ -4,3 +4,4 @@ alias hg='history | grep '
 
 alias vim="nvim"
 alias ovim="vim"
+alias code="code-insiders"

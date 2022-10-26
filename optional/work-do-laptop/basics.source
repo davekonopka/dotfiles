@@ -1,7 +1,6 @@
 alias cthulhu="cd ~/Projects/cthulhu && upgradeGo && source .env.sh"
 alias cdsre="cd ~/Projects/cthulhu/docode/src/do/teams/sre"
 
-alias code="code-insiders"
 export PATH="/Users/dkonopka/Projects/cthulhu/docode/bin:$PATH:/Users/dkonopka/Projects/scripts/bin"
 
 # Upgrade Go to match .goversion file in current dir if it exists
