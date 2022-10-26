@@ -1,55 +1,14 @@
 set shell=bash
+
 imap jj <Esc>
+let mapleader = "'"
+
+syntax on       " highlight syntax
+set number      " show line numbers
+set noswapfile  " disable the swapfile
+set hlsearch    " highlight all results
+set ignorecase  " ignore case in search
+set incsearch   " show search results as you type
 
 call plug#begin('~/.vim/bundle')
-
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'm-kat/aws-vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'elzr/vim-json'
-Plug 'rakr/vim-one'
-Plug 'joshdick/onedark.vim'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
-Plug 'rking/ag.vim'
-Plug 'fatih/vim-go'
-
 call plug#end()
-
-" Theme
-silent! colorscheme onedark
-set background=dark
-set guifont=Droid\ Sans\ Mono:h18
-" call MacSetFont("Droid Sans Mono", 18)
-
-" Easier panel navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Set default panel location
-set splitbelow
-set splitright
-
-set number
-
-let g:ale_sign_column_always = 1
-let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
-let g:ale_sign_error = '👹'
-let g:ale_sign_warning = '🖕'
-let g:ale_echo_msg_error_str = '👹'
-let g:ale_echo_msg_warning_str = '🖕'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-noremap <F11> :NERDTreeFind<CR>
-noremap <F12> :NERDTreeToggle<CR>
-
-let NERDTreeShowHidden=1
-
-let g:ctrlp_show_hidden=1
