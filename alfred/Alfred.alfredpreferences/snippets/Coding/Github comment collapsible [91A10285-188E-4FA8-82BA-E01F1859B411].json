@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<details>\n  <summary>Details<\/summary>\n\n```\n{cursor}\n```\n<\/details>",
+    "uid" : "91A10285-188E-4FA8-82BA-E01F1859B411",
+    "name" : "Github comment collapsible",
+    "keyword" : "ghcol"
+  }
+}
