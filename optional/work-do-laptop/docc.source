@@ -1,3 +1,0 @@
-requireEnvVar "DOTFILES_WORK_DOCC_ARTIFACT_URL" || return 1
-
-alias docc-upgrade="curl ${DOTFILES_WORK_DOCC_ARTIFACT_URL} -o - | tar -C /usr/local/bin -xzf -"
