@@ -5,3 +5,8 @@ alias hg='history | grep '
 alias vim="nvim"
 alias ovim="vim"
 alias code="code-insiders"
+
+alias tf="terraform"
+alias tfp="terraform plan"
+alias tg="terragrunt"
+alias tgp="terragrunt plan"
