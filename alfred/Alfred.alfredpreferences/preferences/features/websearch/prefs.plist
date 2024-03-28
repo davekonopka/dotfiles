@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>60A8B688-642C-41B7-9AB4-E5205E8C2973</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gif</string>
+			<key>spaces</key>
+			<string>-</string>
+			<key>text</key>
+			<string>Giphy</string>
+			<key>url</key>
+			<string>https://giphy.com/search/{query}</string>
+		</dict>
+		<key>ECAE5AD2-78C9-43E7-8121-2828A2EC54E0</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>nyt</string>
+			<key>text</key>
+			<string>New York Times Library Access</string>
+			<key>url</key>
+			<string>https://www.nytimes.com/subscription/redeem?campaignId=4YUH6&amp;gift_code=7c37a678b807f684</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
