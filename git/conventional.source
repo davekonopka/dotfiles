@@ -1,0 +1,6 @@
+# Conventional Commit helpers
+function cc-labels() {
+  for label in fix feature build chore ci docs style refactor perf test; do
+    echo "$label"
+  done
+}
