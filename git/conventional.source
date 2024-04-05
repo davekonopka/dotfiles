@@ -3,4 +3,5 @@ function cc-labels() {
   for label in fix feature build chore ci docs style refactor perf test; do
     echo "$label"
   done
+  echo "https://kapeli.com/cheat_sheets/Conventional_Commits.docset/Contents/Resources/Documents/index"
 }
