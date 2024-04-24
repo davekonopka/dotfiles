@@ -1,0 +1,3 @@
+# Python shell completions
+# Required: python3 -m pip install --user argcomplete
+[[ -r "$DOT/utils/_python-argcomplete" ]] && . "$DOT/utils/_python-argcomplete"
