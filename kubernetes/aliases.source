@@ -10,3 +10,5 @@ alias kgp='kubectl get pods'
 alias kgpa='kubectl get pods --all-namespaces'
 
 alias kl='kubectl logs'
+
+alias kcucc='kubectl config unset current-context'
