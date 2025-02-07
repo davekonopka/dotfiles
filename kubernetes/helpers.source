@@ -1,0 +1,7 @@
+kkpods(){
+  echo -e "POD\tNODE\tPOOL";
+  kubectl get pods --all-namespaces -o jsonpath='{range .items[*]}{.metadata.name} {.spec.nodeName}{"\n"}{end}' | while read pod node; do
+    pool=$(kubectl get node "$node" -o custom-columns="NAME:.metadata.name,POOL:.metadata.labels.karpenter\\.sh/nodepool");
+    echo -e "$pod\t$node\t$pool";
+  done
+}
