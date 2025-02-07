@@ -1,13 +1,15 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+local act = wezterm.action
+
 -- This will hold the configuration.
 local config = {
   set_environment_variables = {
     PATH = "/opt/homebrew/bin:" .. os.getenv("PATH")
   },
   default_prog = { "bash", "-c", "tmux a || tmux" },
-  color_scheme = "Solarized Dark Higher Contrast (Gogh)",
+  color_scheme = "Catppuccin Mocha",
   font = wezterm.font 'RobotoMono Nerd Font Mono',
   font_size = 18.0,
   initial_rows = 50,
@@ -26,9 +28,9 @@ local config = {
   tab_max_width = 25,
   keys = {
     -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
-    {key="LeftArrow", mods="OPT", action=wezterm.action{SendString="\x1bb"}},
+    { key = "LeftArrow", mods = "OPT", action = wezterm.action{SendString="\x1bb"} },
     -- Make Option-Right equivalent to Alt-f; forward-word
-    {key="RightArrow", mods="OPT", action=wezterm.action{SendString="\x1bf"}},
+    { key = "RightArrow", mods="OPT", action = wezterm.action{SendString="\x1bf"} },
   }
 }
 
