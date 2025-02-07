@@ -1,0 +1,6 @@
+return {
+  "displeased/conventional.vim",
+  "folke/tokyonight.nvim",
+  "nvim-tree/nvim-web-devicons",
+  "nvim-tree/nvim-tree.lua",
+}
